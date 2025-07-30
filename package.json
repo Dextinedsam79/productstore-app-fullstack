@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon backend/server.js",
-    "build": "npm run build",
-    "start": "NODE_ENV=production node backend/server.js"
+    "dev": "nodemon server.js",
+    "start": "NODE_ENV=production node server.js",
+    "install:frontend": "npm --prefix frontend install",
+    "frontend:build": "npm --prefix frontend run build",
+    "build": "npm install && npm run install:frontend && npm run frontend:build"
   },
   "type": "module",
   "keywords": [],
